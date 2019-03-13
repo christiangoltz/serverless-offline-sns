@@ -27,7 +27,7 @@ class ServerlessOfflineSns {
     constructor(serverless: any, options: any) {
         this.app = express();
         this.app.use(cors());
-        this.app.use(bodyParser.json({ type: ["application/json", "text/plain"] }));
+        this.app.use(bodyParser.json({ limit: "50mb", type: ["application/json", "text/plain"] }));
         this.options = options;
         this.serverless = serverless;
 
